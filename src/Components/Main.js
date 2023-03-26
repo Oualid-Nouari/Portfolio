@@ -4,7 +4,7 @@ import { saveAs } from 'file-saver';
 
 const Main = () => {
     const handleDownload = () => {
-        const pdfUrl = '../Data/resume_001.pdf';
+        const pdfUrl = `${process.env.PUBLIC_URL}/resume_001.pdf`;
         fetch(pdfUrl)
           .then(response => response.blob())
           .then(blob => {
