@@ -1,6 +1,6 @@
 import Bakery from '../imgs/benyahya.JPG'
 import Gim from '../imgs/gim.JPG'
-import Quizzical from '../imgs/quizzical.JPG'
+import Handel from '../imgs/handel.png'
 import SimoLife from '../imgs/simoLife.JPG'
 import Sneaker from '../imgs/sneakers.JPG'
 import Umee from '../imgs/chatrooms.JPG'
@@ -23,9 +23,9 @@ export default {
             },
             {
               "name": "Quizzical Game",
-              "img": Quizzical,
-              "codeLink": "https://github.com/Oualid-Nouari/Quizzical-game",
-              "liveVersion": "https://oualid-nouari.github.io/Quizzical-game/"
+              "img": Handel,
+              "codeLink": "https://github.com/Oualid-Nouari/Handel-investment",
+              "liveVersion": "https://oualid-nouari.github.io/Handel-investment/"
             },
             {
               "name": "Spend Money Game",
