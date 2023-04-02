@@ -1,9 +1,9 @@
 import Bakery from '../imgs/benyahya.JPG'
 import Gim from '../imgs/gim.JPG'
-import Handel from '../imgs/handel.png'
 import SimoLife from '../imgs/simoLife.JPG'
 import Sneaker from '../imgs/sneakers.JPG'
 import Umee from '../imgs/chatrooms.JPG'
+import Handel from '../imgs/handel.png'
 
 export default {
     "success": true,
@@ -22,7 +22,7 @@ export default {
               "liveVersion": "https://oualid-nouari.github.io/gym-platform/"
             },
             {
-              "name": "Quizzical Game",
+              "name": "Handel investment",
               "img": Handel,
               "codeLink": "https://github.com/Oualid-Nouari/Handel-investment",
               "liveVersion": "https://oualid-nouari.github.io/Handel-investment/"
