@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.d9b42eb5.css",
-    "main.js": "/Portfolio/static/js/main.a55ec5c8.js",
-    "static/media/handel.png": "/Portfolio/static/media/handel.7b7c9a7b24965b3f5df3.png",
+    "main.js": "/Portfolio/static/js/main.3177c159.js",
+    "static/media/handel.png": "/Portfolio/static/media/handel.3ba4eb0bacaa879548bd.png",
     "static/media/pic_png.png": "/Portfolio/static/media/pic_png.dccc082d2acc05cfb40f.png",
     "static/media/benyahya.JPG": "/Portfolio/static/media/benyahya.75ae8c1be1a976c80a33.JPG",
     "static/media/sneakers.JPG": "/Portfolio/static/media/sneakers.f0ddd671cba9482d6692.JPG",
@@ -12,10 +12,10 @@
     "static/media/logoMe.png": "/Portfolio/static/media/logoMe.2d342a92a0322cd2390b.png",
     "index.html": "/Portfolio/index.html",
     "main.d9b42eb5.css.map": "/Portfolio/static/css/main.d9b42eb5.css.map",
-    "main.a55ec5c8.js.map": "/Portfolio/static/js/main.a55ec5c8.js.map"
+    "main.3177c159.js.map": "/Portfolio/static/js/main.3177c159.js.map"
   },
   "entrypoints": [
     "static/css/main.d9b42eb5.css",
-    "static/js/main.a55ec5c8.js"
+    "static/js/main.3177c159.js"
   ]
 }
