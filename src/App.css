@@ -284,7 +284,7 @@ article .projects .project {
 }
 
 article .projects .project-up {
-    height: 250px;
+    height: 210px;
     position: relative;
     cursor: pointer;
 }

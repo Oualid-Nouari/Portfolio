@@ -1,7 +1,7 @@
 import Bakery from '../imgs/benyahya.JPG'
 import Gim from '../imgs/gim.JPG'
 import SimoLife from '../imgs/simoLife.JPG'
-import Sneaker from '../imgs/sneakers.JPG'
+import Chaabi from '../imgs/chaabi.png'
 import Umee from '../imgs/chatrooms.JPG'
 import Handel from '../imgs/handel.png'
 
@@ -34,10 +34,10 @@ export default {
               "liveVersion": "https://oualid-nouari.github.io/Spend-Simo-Life-Money/"
             },
             {
-              "name": "Sneakers Shoes",
-              "img": Sneaker,
-              "codeLink": "https://github.com/Oualid-Nouari/Sneakers-Shoes-Landing-Page",
-              "liveVersion": "https://oualid-nouari.github.io/Sneakers-Shoes-Landing-Page/"
+              "name": "Banque Populaire",
+              "img": Chaabi,
+              "codeLink": "https://github.com/Oualid-Nouari/Banque-populaire",
+              "liveVersion": "https://oualid-nouari.github.io/Banque-populaire/"
             },
             {
               "name": "Chat rooms app",
