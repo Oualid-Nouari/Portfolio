@@ -2,7 +2,7 @@ import Bakery from '../imgs/benyahya.JPG'
 import Gim from '../imgs/gim.JPG'
 import SimoLife from '../imgs/simoLife.JPG'
 import Chaabi from '../imgs/chaabi.png'
-import Umee from '../imgs/chatrooms.JPG'
+import Crypto from '../imgs/crypto.JPG'
 import Handel from '../imgs/handel.png'
 
 export default {
@@ -14,6 +14,12 @@ export default {
               "img": Bakery,
               "codeLink": "https://github.com/Oualid-Nouari/benyahya_house",
               "liveVersion": "https://oualid-nouari.github.io/benyahya_house/"
+            },
+            {
+              "name": "Crypto Tracker",
+              "img": Crypto,
+              "codeLink": "https://github.com/Oualid-Nouari/Crypto-Tracker",
+              "liveVersion": "https://oualid-nouari.github.io/Crypto-Tracker/"
             },
             {
               "name": "Gym",
@@ -39,12 +45,7 @@ export default {
               "codeLink": "https://github.com/Oualid-Nouari/Banque-populaire",
               "liveVersion": "https://oualid-nouari.github.io/Banque-populaire/"
             },
-            {
-              "name": "Chat rooms app",
-              "img": Umee,
-              "codeLink": "https://github.com/Oualid-Nouari/Umee-chat-rooms",
-              "liveVersion": "https://oualid-nouari.github.io/Umee-chat-rooms/"
-            },
+            
           ],
     }
   }

@@ -21,13 +21,7 @@ const Aboutme = () => {
         </h1>
         <h1>Front-end Developer!</h1>
         <p>
-          Hi there! I'm a passionate front-end developer with a keen eye for
-          design and user experience. My goal is to bring your website to life
-          by creating beautiful and functional front-end interfaces that engage
-          and delight your users. With expertise in HTML, CSS, JavaScript, and
-          the front-end framework 'React js', I'm equipped to tackle any project and
-          bring your vision to reality. Let's work together to build a website
-          that truly stands out!
+          Hi there. My name is Oualid, and I'm a junior frontend developer. I started my journey into learning front-end development on January 29, 2022. I started by learning the basics of HTML, CSS, and responsive design from FreeCodeCamp, which gave me the "Responsive Web Design" certification. Also, I have a solid understanding of JavaScript. ReactJs, Redux, and the basics of Typescript—I've created several projects using these technologies, which you can see <a href="#project">here</a>.
         </p>
         <div className="social-media">
           <a
