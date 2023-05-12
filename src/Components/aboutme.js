@@ -32,13 +32,6 @@ const Aboutme = () => {
             <i class="fa-brands fa-github"></i>
           </a>
           <a
-            href="https://www.instagram.com/oualid._.nouari/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a
             href="https://www.linkedin.com/in/oualid-nouari-b45ba324a/"
             target="_blank"
             rel="noreferrer"

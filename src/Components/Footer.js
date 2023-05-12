@@ -7,7 +7,6 @@ const Footer = () => {
             <p>2023 &#169; All rights reserved</p>
             <div className='social-media'>
             <a href="https://github.com/Oualid-Nouari" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/oualid._.nouari/" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/oualid-nouari-b45ba324a/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
