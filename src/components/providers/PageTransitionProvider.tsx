@@ -27,8 +27,9 @@ function typingDuration(text: string): number {
 }
 
 const ROUTE_TRANSITIONS: Record<string, string[]> = {
-  "/": ["Accueil"],
-  "/about": ["À propos", "Mon parcours"],
+  "/": ["Bienvenue"],
+  "/about": ["À propos de moi"],
+  "/contact": ["Contact"],
   "/experiences": ["Mes expériences"],
   "/experiences/hb-development": [
     "Mon rôle : Développeur Odoo junior",
@@ -77,15 +78,47 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
   const ctxRef = useRef<gsap.Context | null>(null);
   const hasRunInitialAnimation = useRef(false);
 
+  const [scrollLocked, setScrollLocked] = useState(true);
+
   const clearLineSpans = useCallback(() => {
     [line1Ref, line2Ref, line3Ref].forEach((r) => {
       if (r.current) r.current.textContent = "";
     });
   }, []);
 
+  const disableScroll = useCallback(() => {
+    setScrollLocked(true);
+    if (typeof window !== "undefined") {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      const lenis = (window as any).lenis;
+      if (lenis) lenis.stop();
+    }
+  }, []);
+
+  const enableScroll = useCallback(() => {
+    setScrollLocked(false);
+    if (typeof window !== "undefined") {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      // Poll for Lenis in case it hasn't mounted yet
+      const tryStart = () => {
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          lenis.start();
+        } else {
+          requestAnimationFrame(tryStart);
+        }
+      };
+      tryStart();
+    }
+  }, []);
+
   useEffect(() => {
     if (hasRunInitialAnimation.current) return;
     hasRunInitialAnimation.current = true;
+
+    disableScroll();
 
     const lines = ROUTE_TRANSITIONS[pathname] || [];
     if (lines.length > 0) {
@@ -133,6 +166,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
         tl.to(layer2Ref.current, { yPercent: 100, duration: 1.8, ease: "expo.out" }, "<");
         tl.to(layer1Ref.current, { yPercent: 100, duration: 1.8, ease: "expo.out" }, "<0.15");
         tl.set(overlayRef.current, { autoAlpha: 0 });
+        tl.call(() => enableScroll());
       });
 
       ctxRef.current = ctx;
@@ -142,6 +176,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
         gsap.set([layer1Ref.current, layer2Ref.current], { yPercent: -100 });
         gsap.set(textContainerRef.current, { opacity: 0 });
         clearLineSpans();
+        enableScroll();
       });
 
       ctxRef.current = ctx;
@@ -161,13 +196,14 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
         setLineLayout("single");
         setMultiLineCount(3);
         isTransitioningRef.current = false;
+        enableScroll();
       },
     });
 
     tlOut.to(textContainerRef.current, { opacity: 0, duration: 0.3, ease: "expo.out" }, 0);
     tlOut.to(layer2Ref.current, { yPercent: 100, duration: 1.8, ease: "expo.out" }, 0.2);
     tlOut.to(layer1Ref.current, { yPercent: 100, duration: 1.8, ease: "expo.out" }, 0.35);
-  }, [clearLineSpans]);
+  }, [clearLineSpans, enableScroll]);
 
   useEffect(() => {
     if (isTransitioningRef.current && pathname === targetHrefRef.current) {
@@ -182,12 +218,24 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
     const [path, hash] = href.split("#");
     const targetPath = path || "/";
 
+    // If already on this page (no hash or same page), don't transition
+    if (targetPath === pathname && !hash) return;
+
+    // If it's a hash on the current page, just scroll
+    if (targetPath === pathname && hash) {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
     const configLines = ROUTE_TRANSITIONS[targetPath];
     const lines = configLines || (Array.isArray(newText) ? newText : [newText]).filter((s) => s.length > 0);
     const isMulti = lines.length > 1;
 
     isTransitioningRef.current = true;
     targetHrefRef.current = targetPath;
+    
+    disableScroll();
 
     flushSync(() => {
       setLineLayout(isMulti ? "multi" : "single");
@@ -255,19 +303,53 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
     );
   };
 
+  // Block ALL scroll input at the capture phase (before Lenis can process it)
+  useEffect(() => {
+    if (!scrollLocked) return;
+
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    };
+
+    const preventKeys = (e: KeyboardEvent) => {
+      if (["ArrowDown", "ArrowUp", " ", "PageDown", "PageUp", "Home", "End"].includes(e.key)) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+    };
+
+    // Use capture phase + stopImmediatePropagation to block before Lenis sees it
+    window.addEventListener("wheel", preventScroll, { passive: false, capture: true });
+    window.addEventListener("touchmove", preventScroll, { passive: false, capture: true });
+    window.addEventListener("keydown", preventKeys as EventListener, { capture: true });
+
+    // Also stop Lenis if it somehow started
+    const lenis = (window as any).lenis;
+    if (lenis) lenis.stop();
+
+    return () => {
+      window.removeEventListener("wheel", preventScroll, { capture: true });
+      window.removeEventListener("touchmove", preventScroll, { capture: true });
+      window.removeEventListener("keydown", preventKeys as EventListener, { capture: true });
+    };
+  }, [scrollLocked]);
+
   return (
     <TransitionContext.Provider value={{ navigate }}>
       {children}
 
-      <div ref={overlayRef} className="fixed inset-0 z-[9999] invisible opacity-0">
+      <div ref={overlayRef} data-transition-overlay className="fixed inset-0 z-[9999]">
         <div
           ref={layer1Ref}
           className="absolute inset-0 z-40 bg-[#017E84] will-change-transform"
+          style={{ transform: "translateY(0%)" }}
         />
 
         <div
           ref={layer2Ref}
           className="absolute inset-0 z-50 bg-black will-change-transform"
+          style={{ transform: "translateY(0%)" }}
         />
 
         <div

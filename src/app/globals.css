@@ -59,3 +59,28 @@ html.lenis, html.lenis body {
 .transition-caret {
   animation: transition-caret-blink 0.5s step-end infinite;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(1, 126, 132, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(1, 126, 132, 0.8);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(1, 126, 132, 0.4) var(--background);
+}

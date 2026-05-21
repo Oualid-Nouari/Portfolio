@@ -22,8 +22,8 @@ export default function Header() {
 
   const navLinks = [
     { href: "/experiences", label: "Expériences", title: "Expériences" },
-    { href: "/#about", label: "À propos", title: "Accueil" },
-    { href: "/#contact", label: "Contact", title: "Accueil" },
+    { href: "/about", label: "À propos", title: "À propos" },
+    { href: "/contact", label: "Contact", title: "Contact" },
   ];
 
   const handleLinkClick = () => {

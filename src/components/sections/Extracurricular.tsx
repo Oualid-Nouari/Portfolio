@@ -18,7 +18,7 @@ const activities = [
     taches: "Création du logo du club, management d'une équipe de 6 (social media managers, designers, video editors).",
     periode: "2024 — 2025",
     lieu: "FSJES, Oujda",
-    image: "/images/team.jpeg",
+    image: "/images/Team.jpeg",
     imagePosition: "left",
     buttonPosition: "bottom-left" as const,
     caseStudyHref: "/club-dexcellence",
