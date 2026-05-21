@@ -16,10 +16,8 @@ export default function SmoothScrollProvider({
 
     // Initialize Lenis with "heavy" and premium feel settings
     const lenis = new Lenis({
-      duration: 1.5, // slightly longer for a heavier, premium feel
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing, but slow
-      direction: "vertical",
-      gestureDirection: "vertical",
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
