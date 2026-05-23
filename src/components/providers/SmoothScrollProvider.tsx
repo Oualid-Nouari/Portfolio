@@ -21,7 +21,6 @@ export default function SmoothScrollProvider({
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
-      autoStart: false,
     });
 
     lenisRef.current = lenis;
