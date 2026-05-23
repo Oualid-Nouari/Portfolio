@@ -3,6 +3,7 @@ import { Inter, Syne, Outfit } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import { PageTransitionProvider } from "@/components/providers/PageTransitionProvider";
+import AvailabilityModal from "@/components/ui/AvailabilityModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,9 +25,6 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Oualid Nouari",
   description: "Premium interactive portfolio for an Odoo developer.",
-  icons: {
-    icon: "/images/g_can.png",
-  },
 };
 
 export default function RootLayout({
@@ -40,6 +38,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <PageTransitionProvider>
             {children}
+            <AvailabilityModal />
           </PageTransitionProvider>
         </SmoothScrollProvider>
       </body>
