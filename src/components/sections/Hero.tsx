@@ -14,7 +14,7 @@ export default function Hero() {
   const orbsRef = useRef<HTMLDivElement>(null);
   const floatersRef = useRef<HTMLDivElement>(null);
 
-  const descriptionText = "Bientôt diplômé d'un Master en Management des Systèmes d'Information Intelligents, je suis actuellement en stage de fin d'études chez HB Development en tant que développeur Odoo junior";
+  const descriptionText = "Bientôt diplômé d'un Master en Management des Systèmes d’Information Intelligents, je suis à la recherche de mon premier emploi en tant que développeur Odoo à partir de septembre 2026.";
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -150,7 +150,7 @@ export default function Hero() {
             {wrapChars("Développeur")}
           </div>
           <div className="flex justify-center overflow-hidden text-white/50">
-            {wrapChars("Odoo junior")}
+            {wrapChars("Odoo")}
           </div>
         </h1>
       </div>
@@ -171,13 +171,13 @@ export default function Hero() {
         </p>
 
         <Magnetic>
-          <div className="w-24 h-24 md:w-[110px] md:h-[110px] bg-[#017E84] hover:bg-white hover:text-[#017E84] text-white rounded-full flex flex-col items-center justify-center transition-colors duration-300 gap-1.5 shadow-[0_0_40px_rgba(1,126,132,0.4)] cursor-pointer group backdrop-blur-md">
+          <a href="/images/CV - OUALID NOUARI.pdf" target="_blank" rel="noopener noreferrer" className="w-24 h-24 md:w-[110px] md:h-[110px] bg-[#017E84] hover:bg-white hover:text-[#017E84] text-white rounded-full flex flex-col items-center justify-center transition-colors duration-300 gap-1.5 shadow-[0_0_40px_rgba(1,126,132,0.4)] cursor-pointer group backdrop-blur-md">
             <span className="font-medium text-xs md:text-sm uppercase tracking-widest">Mon CV</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-transform group-hover:translate-y-1">
               <path d="M12 5V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M19 12L12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </div>
+          </a>
         </Magnetic>
       </div>
 

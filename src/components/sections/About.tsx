@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Magnetic from "@/components/ui/Magnetic";
+import TransitionLink from "@/components/ui/TransitionLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,7 +72,7 @@ export default function About() {
             le code.
           </h3>
           
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col items-center lg:items-start gap-6">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#017E84] opacity-75"></span>
@@ -78,6 +80,12 @@ export default function About() {
               </span>
               <span className="text-sm text-foreground/80 font-medium">Disponible pour de nouveaux défis</span>
             </div>
+            
+            <Magnetic>
+              <TransitionLink href="/about" title="À propos" className="inline-flex items-center justify-center rounded-full bg-[#017E84] px-6 md:px-8 py-3 md:py-3.5 text-xs md:text-sm font-medium text-white shadow-[0_0_24px_rgba(1,126,132,0.35)] transition-colors hover:bg-white hover:text-[#017E84] w-full md:w-auto text-center">
+                En savoir plus sur moi →
+              </TransitionLink>
+            </Magnetic>
           </div>
         </div>
 

@@ -92,14 +92,14 @@ export default function Contact() {
           {/* Right Side: Info & Links */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-10 lg:pb-6 lg:max-w-md w-full">
             <p className="reveal-element text-sm md:text-base text-foreground/60 font-light leading-relaxed">
-              Disponible à partir de <span className="text-white font-medium">septembre 2026</span>. N'hésitez pas à me contacter pour discuter de vos projets.
+              Disponible à partir de <span className="text-white font-medium">septembre 2026</span>.
             </p>
 
             <div className="reveal-element flex flex-col sm:flex-row items-center gap-6">
               <div className="flex-shrink-0">
                 <Magnetic>
                   <a
-                    href="/cv.pdf"
+                    href="/images/CV - OUALID NOUARI.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-[#017E84] hover:bg-white hover:text-[#017E84] text-white rounded-full flex flex-col items-center justify-center transition-colors duration-300 gap-1 md:gap-2 shadow-[0_0_40px_rgba(1,126,132,0.4)] group backdrop-blur-md"

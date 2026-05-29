@@ -124,6 +124,14 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
+
+            <div className="mt-4 lg:mt-8 flex justify-end w-full">
+              <Magnetic>
+                <TransitionLink href="/experiences" title="Expériences" className="inline-flex items-center justify-center rounded-full bg-[#017E84] px-6 md:px-8 py-3 md:py-3.5 text-xs md:text-sm font-medium text-white shadow-[0_0_24px_rgba(1,126,132,0.35)] transition-colors hover:bg-white hover:text-[#017E84] w-full md:w-auto text-center">
+                  Voir mes expériences →
+                </TransitionLink>
+              </Magnetic>
+            </div>
           </div>
 
         </div>
